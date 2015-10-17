@@ -13,7 +13,7 @@ export default function (options) {
   delete options.include;
 
   return function exhibitCleanCss({matches, file, contents, util, emit}) {
-    // pass non-JS files straight through
+    // skip irrelevant files
     if (!matches(include)) return contents;
 
     let styles, sourceMap, errors, warnings;
